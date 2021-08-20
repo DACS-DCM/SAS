@@ -1,7 +1,7 @@
-%macro removeDiagnosisDuplicates(allData,nodups);
+%macro removeDiagnosisDuplicates;
 
-	proc sort data=&allData. out=&nodups. nodupkey;
-		by RECNUM
+	proc sort data=tmp out=tmp nodupkey;
+		by 	RECNUM
 			C_DIAG
 			C_DIAGTYPE
 		;
