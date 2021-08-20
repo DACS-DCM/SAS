@@ -1,7 +1,7 @@
-%macro findSdsBirthyear(studpop,studpopWithBirthyear);
+%macro findSdsBirthyear;
 
-	data &studpopWithBirthyear.;
-		set &studpop.;
+	data tmp;
+		set tmp;
 		birthyear=year(d_foddato);
 	run;
 
