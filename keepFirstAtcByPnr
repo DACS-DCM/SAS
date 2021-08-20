@@ -1,0 +1,15 @@
+%macro keepFirstAtcByPnr;
+
+  proc sort data = tmp;
+    by pnr eksd;
+  run;
+  
+  data tmp;
+    set tmp;
+    by pnr eksd;
+    
+    if first.pnr then
+      output tmp;
+    run;
+
+%mend;
