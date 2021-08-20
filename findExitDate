@@ -1,0 +1,9 @@
+%macro findExitDate;
+
+  data tmp;
+    set tmp;
+    exitdate = min(studyEndDate, emigrationDate, upperAgeLimitDate, deathdate);
+    format exitdate yymmdd10.;
+  run;
+
+%mend;
