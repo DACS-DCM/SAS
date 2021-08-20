@@ -1,0 +1,8 @@
+%macro dropVarsStartingWith(varsToBeDropped);
+
+  data tmp;
+    set tmp;
+    drop &varsToBeDropped.:;
+  run;
+
+%mend;
