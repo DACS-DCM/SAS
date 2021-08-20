@@ -1,0 +1,10 @@
+%macro nrows;
+
+  proc sql noprint;
+    select count(*) into :nrows
+      from tmp;
+quit;
+
+%put &=nrows;
+
+%mend;
