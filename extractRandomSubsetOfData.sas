@@ -1,7 +1,7 @@
-%macro extractRandomSubsetOfData(allData,randomSubset);
+%macro extractRandomSubsetOfData;
 
-	data &randomSubset.;
-		set &allData.;
+	data tmp;
+		set tmp;
 		r=rand("Uniform");
 
 		if r < .9 then
