@@ -1,0 +1,9 @@
+%macro setEventDate;
+
+  data tmp;
+    set tmp;
+    eventdate = min(eventOfInterestDate, competingeventdate, exitdate);
+    format eventdate yymmdd10.;
+  run;
+
+%mend;
