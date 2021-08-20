@@ -1,0 +1,8 @@
+%macro setLowerAgeLimitDateTo(dateNyearsOld);
+
+  data tmp;
+    set tmp;
+    lowerAgeLimitDate = &dateNyearsOld.;
+    format lowerAgeLimitDate yymmdd10.;
+
+%mend;
