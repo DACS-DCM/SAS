@@ -1,0 +1,9 @@
+%macro setEventOfInterestDateTo(eventOfInterestDate);
+
+  data tmp;
+    set tmp;
+    eventOfInterestDate = &eventOfInterestDate.;
+    format eventOfInterestDate yymmdd10.;
+  run;
+
+%mend;
