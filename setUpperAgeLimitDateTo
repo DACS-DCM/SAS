@@ -1,0 +1,8 @@
+%macro setUpperAgeLimitDateTo(dateNyearsOld);
+
+  data tmp;
+    set tmp;
+    upperAgeLimitDate = &dateNyearsOld.;
+    format upperAgeLimitDate yymmdd10.;
+
+%mend;
