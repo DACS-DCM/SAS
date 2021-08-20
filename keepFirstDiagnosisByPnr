@@ -1,0 +1,15 @@
+%macro keepFirstDiagnosisByPnr;
+
+  proc sort data = tmp;
+    by pnr diagnosisDate;
+  run;
+  
+  data tmp;
+    set tmp;
+    by pnr diagnosisDate;
+    
+    if first.pnr then
+      output tmp;
+  run;
+
+%mend;
