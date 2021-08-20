@@ -1,7 +1,7 @@
-%macro dropPercent(pop,noPercent);
+%macro dropPercent;
 
-	data &noPercent.;
-		set &pop.;
+	data tmp;
+		set tmp;
 		drop percent;
 	run;
 
