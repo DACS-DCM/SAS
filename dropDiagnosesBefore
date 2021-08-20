@@ -1,0 +1,8 @@
+%macro dropDiagnosesBefore(date);
+
+data tmp;
+  set tmp;
+  where &date. <= diagnosisDate;
+run;
+
+%mend;
