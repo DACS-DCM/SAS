@@ -1,0 +1,9 @@
+%macro setCompetingEventDateTo(competingeventdate);
+
+  data tmp;
+    set tmp;
+    competingeventdate = &competingeventdate.;
+    format competingeventdate yymmdd10.;
+  run;
+
+%mend;
