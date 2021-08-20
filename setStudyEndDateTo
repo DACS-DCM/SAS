@@ -1,0 +1,9 @@
+%macro setStudyEndDateTo(studyEndDate);
+
+  data tmp;
+    set tmp;
+    studyEndDate = &studyEndDate.;
+    format studyEndDate yymmdd10.;
+  run;
+
+%mend;
