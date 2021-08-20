@@ -1,0 +1,7 @@
+%macro saveAs(dataset);
+
+  data &dataset.;
+    set tmp;
+  run;
+
+%mend;
