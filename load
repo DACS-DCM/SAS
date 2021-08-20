@@ -1,3 +1,7 @@
 %macro load(dataset);
-  %loadAsTmp(&dataset);
+  
+  data tmp;
+    set &dataset.;
+  run;
+  
 %mend;
