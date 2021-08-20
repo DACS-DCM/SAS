@@ -1,7 +1,7 @@
-%macro dropAtcVariables(allVariables,relevantVariables);
+%macro dropAtcVariables;
 
-	data &relevantVariables.;
-		set &allVariables.;
+	data tmp;
+		set tmp;
 		drop strnum packsize cprtjek
 		;
 	run;
