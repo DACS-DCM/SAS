@@ -1,0 +1,8 @@
+%macro dropAtcBefore(date);
+
+  data tmp;
+    set tmp;
+    where &date. <= eksd;
+  run;
+
+%mend;
