@@ -1,0 +1,9 @@
+%macro findEntryDate;
+
+  data tmp;
+    set tmp;
+    entrydate = max(studyStartDate, date5yearsAfterIndate, lowerAgeLimitDate);
+    format entrydate yymmdd10.;
+  run;
+
+%mend;
