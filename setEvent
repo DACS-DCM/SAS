@@ -1,0 +1,16 @@
+%macro setEvent;
+
+  data tmp;
+    set tmp;
+    
+    if eventdate = exitdate then
+      event = 0;
+    
+    if eventdate = competingeventdate then
+      event = 2;
+    
+    if eventdate = eventOfInterestDate then
+      event = 1;
+  run;
+
+%mend;
