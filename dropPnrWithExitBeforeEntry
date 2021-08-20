@@ -1,0 +1,8 @@
+%macro dropPnrWithExitBeforeEntry;
+
+  data tmp;
+    set tmp;
+    where entrydate < exitdate;
+  run;
+
+%mend;
