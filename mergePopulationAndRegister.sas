@@ -1,6 +1,4 @@
-* mergePopulationAndRegister pco 20201015;
-
-%macro mergePopulationAndRegister(population,register,PopulationAndRegister);
+%macro mergePopulationAndRegister(population,register);
 
 	data population;
 		set &population.;
@@ -18,14 +16,20 @@
 		by pnr;
 	run;
 
-	data &PopulationAndregister. onlyregister;
+	data tmp onlyregister;
 		merge population(in=population) register(in=register);
 		by pnr;
 
 		if population then
-			output &PopulationAndRegister.;
+			output tmp;
 		else if not population and register then
 			output onlyRegister;
+	run;
+	
+	%nrows(onlyregister);
+	%put ARE ONLY IN REGISTER AND NOT IN POPULATION;
+	
+	proc delete data = population register onlyRegister;
 	run;
 
 %mend;
