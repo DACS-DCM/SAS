@@ -1,7 +1,7 @@
-%macro frequencyByIndexyear(allPnr);
+%macro frequencyByIndexyear;
 
-	proc freq data=&allPnr.;
-		tables indexyear /missing out=FreqByIndexyear;
+	proc freq data=tmp;
+		tables indexyear /missing out=tmp;
 	run;
 
 
