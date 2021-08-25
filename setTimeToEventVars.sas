@@ -4,7 +4,7 @@
 
 %setEventOfInterestDateTo(myEventOfInterestDate);
 %setCompetingEventDateTo(myCompetingEventDate);
-%setEventdate;
+%setEventDate;
 %setEvent;
 
 %saveAs(populationWithTimeToEventVars);
